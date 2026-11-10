@@ -1,0 +1,31 @@
+name: e-commerce (tests)
+
+# Solo corre los tests del backend. No hace build, deploy ni usa secrets.
+on:
+  push:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/e-commerce.yml'
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/e-commerce.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+      - run: npm ci
+      - run: npm test
