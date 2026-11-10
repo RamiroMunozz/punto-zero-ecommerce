@@ -1,5 +1,6 @@
 # E-commerce PuntoZero
 
+https://puntozeroecommerce.netlify.app/
 Tienda online de productos electrónicos: catálogo con búsqueda y filtros, carrito, checkout con Mercado Pago, perfil de cliente, historial de órdenes y panel de administración. El frontend está hecho en **Vue 3 + Vite** y el backend en **Node.js + Express 5**, sobre **PostgreSQL**.
 
 Esta guía explica cómo levantar el proyecto desde cero en una máquina nueva.
